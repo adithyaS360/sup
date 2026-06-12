@@ -28,7 +28,7 @@ pipeline {
 
         stage('Run Selenium') {
             steps {
-                sh 'mvn exec:java -Dexec.mainClass=com.example.App'
+                sh 'java -jar target/supniqa-1.0-SNAPSOT.jar'
             }
         }
     }
