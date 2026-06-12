@@ -6,6 +6,11 @@ pipeline {
     }
 
     stages {
+        stage('Clean Workspace') {
+    steps {
+        deleteDir()
+    }
+}
 
         stage('Checkout') {
             steps {
@@ -25,6 +30,12 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        stage('Debug') {
+    steps {
+        sh 'google-chrome --version'
+        sh 'which chromedriver || true'
+    }
+}
 
         stage('Run Selenium') {
             steps {
