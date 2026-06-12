@@ -35,7 +35,7 @@ pipeline {
 
     post {
         success {
-            echo "Open Google: https://www.google.com"
+            echo "hello"
         }
 
         failure {
