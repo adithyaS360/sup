@@ -33,7 +33,7 @@ pipeline {
         stage('Debug') {
     steps {
         sh 'google-chrome --version'
-        sh 'which chromedriver || true'
+        sh 'ls -la /root/.cache/selenium || true'
     }
 }
 
