@@ -25,6 +25,17 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        stage('Debug') {
+    steps {
+        sh 'whoami'
+        sh 'pwd'
+        sh 'java -version'
+        sh 'mvn -version'
+        sh 'which google-chrome'
+        sh 'google-chrome --version'
+        sh 'env | sort'
+    }
+}
 
         stage('Run Selenium') {
             steps {
