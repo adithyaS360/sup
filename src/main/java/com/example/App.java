@@ -1,15 +1,23 @@
-package com.example;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
+public class App {
+    public static void main(String[] args) {
 
-public class App 
-{
-    public static void main( String[] args )
-    {
-        WebDriver Driver = new ChromeDriver();
-        Driver.get("https://www.google.com/");
-        Driver.manage().window().maximize();
+        ChromeOptions options = new ChromeOptions();
+
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--remote-allow-origins=*");
+
+        WebDriver driver = new ChromeDriver(options);
+
+        driver.get("https://google.com");
+
+        System.out.println(driver.getTitle());
+
+        driver.quit();
     }
 }
